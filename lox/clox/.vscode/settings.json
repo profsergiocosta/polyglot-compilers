@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "type_traits": "cpp",
+        "table.h": "c",
+        "value.h": "c"
+    }
+}

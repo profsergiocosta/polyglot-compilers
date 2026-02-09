@@ -1,0 +1,153 @@
+var a = "global a";
+var b = "global b";
+var c = "global c";
+{
+  var a = "outer a";
+  var b = "outer b";
+  {
+    var a = "inner a";
+    print a;
+    print b;
+    print c;
+  }
+  print a;
+  print b;
+  print c;
+}
+print a;
+print b;
+print c;
+c = false;
+if (c) {
+    print "ok";
+} else {
+    print "deuruim";
+}
+
+var i = 0;
+while (i < 10) {
+    print i;
+    i = i + 1;
+}
+
+for (var a = 0; a < 20; a = a  + 2) {
+    print a;
+}
+print a;
+
+fun sayHi(first, last) {
+  print "Hi, " + first + " " + last + "!";
+}
+
+sayHi("Dear", "Reader");
+
+fun dobro (x) {
+
+    var a = 10;
+    a = 20;
+    return 2 * x;
+}
+
+fun fat (x) {
+    if (x == 0)
+        return 1;
+    else
+        return x * fat (x-1);
+}
+
+fun f(y) {
+    fun g (x) {
+        return x + y;
+    }
+    return g;
+}
+
+print dobro(4);
+print fat(5);
+print dobro;
+
+print f(2)(4);
+
+var a = "global";
+{
+  fun showA() {
+    print a;
+  }
+
+  showA();
+  var a = "block";
+  showA();
+}
+
+class DevonshireCream {
+  serveOn() {
+    return "Scones";
+  }
+}
+
+print DevonshireCream; // Prints "DevonshireCream".
+
+class Bagel {}
+var bagel = Bagel();
+print bagel; // Prints "Bagel instance".
+bagel.foo = 10;
+print bagel.foo;
+
+class Bacon {
+  eat() {
+    print "Crunch crunch crunch!";
+  }
+}
+
+Bacon().eat(); // Prints "Crunch crunch crunch!".
+
+class Cake {
+
+  init (flavor) {
+    this.flavor = flavor;
+  }
+  taste() {
+    var adjective = "delicious";
+    print "The " + this.flavor + " cake is " + adjective + "!";
+  }
+
+  f () {
+    print this;
+  }
+}
+
+
+var cake = Cake("abacate");
+//cake.flavor = "German chocolate";
+cake.taste(); // Prints "The German chocolate cake is delicious!".
+
+class Doughnut {
+  cook() {
+    print "Fry until golden brown.";
+  }
+}
+
+class BostonCream < Doughnut {}
+
+BostonCream().cook();
+
+class A {
+  method() {
+    print "A method";
+  }
+}
+
+class B < A {
+  method() {
+    print "B method";
+  }
+
+  test() {
+    super.method();
+  }
+}
+
+class C < B {}
+
+C().method();
+C().test();
