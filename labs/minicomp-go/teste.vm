@@ -1,0 +1,17 @@
+push
+10
+pop
+x
+push
+x
+push
+5
+add
+pop
+y
+push
+y
+print
+push
+42
+print
